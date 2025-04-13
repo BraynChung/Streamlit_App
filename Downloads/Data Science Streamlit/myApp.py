@@ -28,3 +28,16 @@ st.write("""
 """)
 st.line_chart(tickerDf.Volume)
 
+import plotly.graph_objects as go
+
+fig = go.Figure(data=[go.Candlestick(
+    x=tickerDf.index,
+    open=tickerDf['Open'],
+    high=tickerDf['High'],
+    low=tickerDf['Low'],
+    close=tickerDf['Close']
+)])
+st.plotly_chart(fig)
+
+
+
